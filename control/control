@@ -1,0 +1,6 @@
+Package: memory-tools
+Version: 0.0.1
+Maintainer: D3VL LTD <jack@d3vl.com>
+Description: Command line tools for fiddling with the memory 
+Architecture: all
+Homepage: https://github.com/d3vl/wtfos-memory-tools
