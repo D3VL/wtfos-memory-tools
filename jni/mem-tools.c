@@ -346,7 +346,7 @@ int main(int argc, char *argv[]) {
         // the command is compare, check if the arguments are valid
         // ex: mem-tools compare 0x17F3D000 /path/to/file
         // ex: mem-tools compare <address> <file>
-        if (argc != 5) {
+        if (argc != 4) {
             printf("Invalid arguments for command 'compare'\nSee 'mem-tools help' for more\n");
             return 0;
         }
@@ -368,12 +368,13 @@ int main(int argc, char *argv[]) {
 
         // read the memory and print it to stdout
         int result = R_memToFileCompare(dev, target, size, offset, file);
-        if (result == 0) {
+        if (result) {
             printf("The memory and the file are the same\n");
+            return 0;
         } else {
             printf("The memory and the file are different\n");
+            return 1;
         }
-        return result;
     }
 
     if (strcmp(command, "help") == 0) {
